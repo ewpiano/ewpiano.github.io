@@ -158,6 +158,18 @@
 				
 					}
 				}
+
+				$('.flexslider').flexslider({
+									
+						animation: "face",
+						slideDirection: "horizontal",
+						slideshow: true,
+						slideshowSpeed: 3500,
+						animationDuration: 500,
+						directionNav: true,
+						controlNav: true 
+							
+				 });
 			
 		  });
 
@@ -196,6 +208,7 @@
                         <li><a href="travel.html">Travel</a>
                     		<ul class="sub-menu"> 
                             	<li><a href="accommodations.html">Accommodations</a></li>
+                            	<li><a href="folio/weihai.html">Weihai</a></li>
 							</ul> 
                         </li>
                         <li><a href="contact.html">Contact</a></li>
@@ -208,16 +221,31 @@
     <!--start content-->
        <div id="content-wrapper">
     
-        <section class="pages clearfix">
+        <section id="ajaxpage" class="pages clearfix">
         
         	<!--start section title-->
-            <div class="display-image" style="width:100%;height:auto;">
-                <img src="images/index.jpg" alt=""/>
-                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
-                    	<div></div>
-                 </div>
-            </div>
-            
+
+			<div class="featured-media-container clearfix">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<img src="images/index.jpg" width="870" height="435" alt="" />
+							<p class="flex-caption">teaching</p>
+						</li>
+						<li>
+							<a href="#"><img src="images/index.jpg" width="870" height="435" alt="" /></a>
+							<p class="flex-caption">teaching</p>
+						</li>
+						<li>
+							<img src="images/index.jpg" width="870" height="435" alt="" />                        
+                        </li>
+                        <li>
+							<img src="images/index.jpg" width="870" height="435" alt="" />                        
+                        </li>
+                    </ul>
+                </div>
+			</div>
+
         	<!--start content left-->
             <div class="content-inner-left">
                     <!--post-1-->
@@ -239,14 +267,14 @@
                         <div class="blog-post-content">
                             <h2 class="blog-post-title"><a href="post-page.html">About the Festival</a></h2>
                             <p>
-                            Perform in intensive studio lessons, master classes and recitals throughout the course of the two-week festival.</p>
+                            Perform in intensive studio lessons, master classes and recitals throughout the course of the two-week festival.</br>
 							Festival faculty includes Yuanji Fan, Jerome Reed, David Northington, and others to be announced.</p>
                             </p>
                             <a class="readMoreabout" href="about.html">Learn More About Our Festival&rarr;</a> 
         					</p>
                         	<div class="blog-post-featured-media">
                             	 <div class="thumb">
-                                    <a href="post-page.html" data-logo="images/logo.png">
+                                    <a href="travel.html" data-logo="images/logo.png">
                                         <img src="images/index.jpg" alt="" />
                                     </a>
                                 </div>
@@ -323,7 +351,7 @@
             	<div class="column_one_half column-footer-widget">
                 	<div class="widget_text">
                         <div id="footer-logo">
-                            <img src="images/logo-common.png" alt="" />
+                            <img src="images/logo.png" alt="" />
                         </div>
                         <p>East West International Piano Festival is a piano festival founded by Dr. David Northington<a href="">Read More.</a></p>
 					</div>
@@ -333,7 +361,7 @@
                 		<h6 class="widgettitle">Contact</h6>
                         <p>Ms. Ruixi Niu</p>
                         <p>Tel: +1 124 327 2222
-                        Mail: <a href="">abc@abc.com/a></p>
+                        Mail: <a href="">abc@abc.com</a></p>
                     </div>
                 </div>
             </footer>
