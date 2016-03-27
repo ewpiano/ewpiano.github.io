@@ -6,32 +6,32 @@
 
 <title>EAST/WEST Internatinal Piano Festival</title>
 
-<link rel="stylesheet" type="text/css" href="css/flexslider.css" />
-<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css"/>
-<link rel="stylesheet" type="text/css" href="css/epicfullscreen.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="css/udt_shortcodes.css" />
-<link rel="stylesheet" type="text/css" href="css/udt_media_queries.css" />
+<link rel="stylesheet" type="text/css" href="../css/flexslider.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.fancybox-1.3.4.css"/>
+<link rel="stylesheet" type="text/css" href="../css/epicfullscreen.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/udt_shortcodes.css" />
+<link rel="stylesheet" type="text/css" href="../css/udt_media_queries.css" />
 
 <!--font-->
-<link rel="stylesheet" type="text/css" href="css/font/bebasneue.css"  charset="utf-8" />
-<link rel="stylesheet" type="text/css" href="quicksand.css" />
+<link rel="stylesheet" type="text/css" href="../css/font/bebasneue.css"  charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/quicksand.css" />
 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
 <!--js-->
-<script type="text/javascript" src="js/iOS-timer.js"></script>
-<script type="text/javascript" src="http://ajax.useso.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.useso.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/jquery.epicHover-fadeZoom.js"></script>
-<script type="text/javascript" src="js/jquery.epicfullscreen.js"></script>
-<script type="text/javascript" src="js/jquery.masonry.js"></script>
-<script type="text/javascript" src="js/jquery.tweet.js"></script>
-<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="../js/iOS-timer.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.epicHover-fadeZoom.js"></script>
+<script type="text/javascript" src="../js/jquery.epicfullscreen.js"></script>
+<script type="text/javascript" src="../js/jquery.masonry.js"></script>
+<script type="text/javascript" src="../js/jquery.tweet.js"></script>
+<script type="text/javascript" src="../js/jquery.flexslider-min.js"></script>
 
 <script type="text/javascript">
 	
@@ -158,6 +158,18 @@
 				
 					}
 				}
+
+				$('.flexslider').flexslider({
+									
+						animation: "face",
+						slideDirection: "horizontal",
+						slideshow: true,
+						slideshowSpeed: 3500,
+						animationDuration: 500,
+						directionNav: true,
+						controlNav: true 
+							
+				 });
 			
 		  });
 
@@ -168,7 +180,7 @@
 	
     <!--background image-->
 	<div class="epicFullscreen">
-		<img class="epicImg" src="images/back.jpg" alt=""/>
+		<img class="epicImg" src="../images/back.jpg" alt=""/>
 	</div>
 
 	<!--start header-->
@@ -176,7 +188,7 @@
     	<div id="header-inner">
         	<header>
             	<div id="logo">
-                	<a href="index.html"><img src="images/logo_white_200.png" alt="ew logo" /></a>
+                	<a href="index.html"><img src="../images/logo_white_200.png" alt="ew logo" /></a>
                 </div>
                 
                 <!--mobileMenu toggle-->
@@ -184,23 +196,23 @@
                 
   					<nav>
                 	<ul class="navigation">
-                    	<li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="faculty.html">Faculty</a></li>
-                        <li><a href="application.html">Application</a>
+                    	<li><a href="index.html">主页</a></li>
+                        <li><a href="about.html">关于音乐节</a></li>
+                        <li><a href="faculty.html">师资力量</a></li>
+                        <li><a href="application.html">申请程序</a>
                         	<ul class="sub-menu">
-                            	<li><a href="tuition.html">Tuition</a></li>
-								<li><a href="payment.html">Payment</a></li>
+                            	<li><a href="tuition.html">费用</a></li>
+								<li><a href="payment.html">支付方式</a></li>
 							</ul>	
                         </li>
-                        <li><a class="active" href="travel.html">Travel</a>
+                        <li><a class="active" href="travel.html">旅行</a>
                     		<ul class="sub-menu"> 
-                            	<li><a href="accommodations.html">Accommodations</a></li>
-                            	                            	<li><a href="folio/weihai.html">Weihai</a></li>
-
+                            	<li><a href="accommodations.html">食宿</a></li>
+                            	<li><a href="fac/weihai.html">关于威海</a></li>
 							</ul> 
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html">联系方式</a></li>
+                        <li><a href="../index.html">English</a></li>
                     </ul>
 			  </nav>
               
@@ -214,27 +226,23 @@
     	<section class="pages clearfix">
         	<!--start section title-->
             <div class="display-image" style="width:100%;height:auto;">
-                <img src="images/weihai.jpg" alt=""/>
+                <img src="../images/weihai.jpg" alt=""/>
                 <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
-                    	<div>Travel</div>
+                    	<div>旅行</div>
                  </div>
             </div>
             <!--start teaser-->            
-			<p>Students are responsible for making their own individual travel arrangements to/from the Festival.  Airline reservations should be made for the Weihai, China Airport destination.  A complimentary shuttle van will transport the participants from the Weihai airport to the University of Shandong/Jinjiang Inn Hotel upon arrival on August 1st.  Another shuttle van will transport the participants back to the Weihai Airport on the morning of August 14th.  Please note that participants must make their flight reservations to arrive/depart prior to the shuttle departure time.</p>
-
-			SHUTTLE VAN SCHEDULE:</p>
-
-			August 1, 2016: Departs Weihai Airport at 2 PM for Jinjiang Inn Hotel</p>
-
-			August 14, 2016: Departs Jinjiang Inn Hotel for the Weihai Airport at 9 AM</p>
-			                                  Arrive at Weihai Airport at 10 AM</p>
+			<p>学员有责任安排个人到达音乐节的行程。</br>
+航空公司机票目的地为为中国威海。</br>
+学员可于8月1日在威海机场乘坐音乐节提供的免费穿梭大巴到达音乐节指定酒店。大巴将于8月14日上午送学员从酒店到达威海机场。</br>
+请注意，学员飞机到达／离开时间需早于大巴发车时间。</br>
+如果您的航班提前抵达，请在机场大堂等候，并在指定时间与音乐节工作人员汇合。</p>
 
 
-
-			If your flight arrives several hours earlier than the shuttle departure, please wait in the lobby area until the East/West representative arrives at the appointed time.
-			</p>
-			A U.S. PASSPORT AND A CHINESE VISA are required for travel to China.  In order to avoid extra fees, the applicant should apply for these documents as soon as airline reservations are made.  It is advisable to use an online site in obtaining the visa for China, as these reputable sites expedite the processing of U. S. applications.</p>
-			If you select to arrive via the high-speed rail system from Beijing to Weihai, please notify Ms. Ruixi Niu (Administrative Director) of your anticipated arrival time.</p>
+大巴时间表：</br>
+2016年8月1日：下午两点离开威海机场去往酒店</br>
+2017年8月14日：上午九点离开酒店，到达威海机场时间为上午十点 
+</p>
 			
         </section>
     </div>
@@ -245,15 +253,15 @@
                 <div class="column_one_half column-footer-widget">
                     <div class="widget_text">
                         <h6 class="widgettitle">East/West Piano Fesitval</h6>
-                        <p>East West International Piano Festival is a piano festival founded by Dr. David Northington.  <a href="about.html">Read More.</a></p>
+                        <p>East/West International Piano Festival 由大卫·诺辛顿博士所创建 <a href="about.html">了解更多.</a></p>
                     </div>
                 </div>
                 <div class="column_one_half last column-footer-widget last">
                     <div class="widget_text">
-                        <h6 class="widgettitle">Contact</h6>
-                        <p>Ms. Ruixi Niu</p>
-                        <p>Tel: +1 215 421 7502
-                        Mail: <a href="mailto:nruixi622@gmail.com">nruixi622@gmail.com</a></p>
+                        <h6 class="widgettitle">联系我们</h6>
+                        <p>牛瑞熙</p>
+                        <p>电话： +1 215 421 7502
+                        Email: <a href="mailto:nruixi622@gmail.com">nruixi622@gmail.com</a></p>
                     </div>
                 </div>
             </footer>
@@ -261,7 +269,7 @@
         <div id="footer-bottom">
             <footer>
                 <!--social networks-->
-                <p class="footer-copyright">Copy Right Reserved - East West International Piano Festival</p>
+                <p class="footer-copyright">Copy Right Reserved - East/West International Piano Festival</p>
             </footer>
         </div>
     </div>
