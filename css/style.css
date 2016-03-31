@@ -70,7 +70,7 @@
 		#header-wrapper #header-inner header nav ul.navigation{position:relative;list-style:none;float:right;font-size:15px; margin:28px 0 0 0; text-transform:uppercase;}
 		#header-wrapper #header-inner header nav ul.navigation li{float:left;margin:0 0 0 25px;line-height:45px;}
 		#header-wrapper #header-inner header nav ul.navigation li:last-child{padding-right:0;}
-		#header-wrapper #header-inner header nav ul.navigation li a{font-family: 'Quicksand', sans-serif;color:#999; text-decoration:none;  padding: 5px 0;}
+		#header-wrapper #header-inner header nav ul.navigation li a{font-family: 'Quicksand', "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑"，sans-serif;color:#999; text-decoration:none;  padding: 5px 0;}
 		#header-wrapper #header-inner header nav ul.navigation li:hover .sub-menu{/*display:block;*/}
 		#header-wrapper #header-inner header nav ul.navigation li a:hover{color:#ff0000;}
 		#header-wrapper #header-inner header nav ul.navigation li a.active{color:#fff;}
@@ -638,7 +638,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 --------------------------------------------------------*/
 
 	/*font & color*/
-	h1,h2,h3,h4,h5,h6{font-family: 'BebasNeueRegular', Arial, sans-serif;letter-spacing: 0; margin-bottom:50px; color:#fff;}
+	h1,h2,h3,h4,h5,h6{font-family: 'BebasNeueRegular', Arial, "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", sans-serif;letter-spacing: 0; margin-bottom:50px; color:#fff;}
 	h1 span,h2 span,h3 span,h4 span,h5 span,h6 span{font-family: 'BebasNeueRegular', sans-serif;font-weight:normal; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration:none; border-bottom:0 !important;}
 	a{color:#ff0000;text-decoration:none;}
