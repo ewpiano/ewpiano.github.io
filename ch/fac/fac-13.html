@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+
+<title>EAST/WEST Internatinal Piano Festival</title>
+
+<link rel="stylesheet" type="text/css" href="../../css/flexslider.css" />
+<link rel="stylesheet" type="text/css" href="../../css/jquery.fancybox-1.3.4.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/epicfullscreen.css" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/udt_shortcodes.css" />
+<link rel="stylesheet" type="text/css" href="../../css/udt_media_queries.css" />
+
+<!--font-->
+<link rel="stylesheet" type="text/css" href="../../css/font/bebasneue.css"  charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/quicksand.css" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--js-->
+<script type="text/javascript" src="../../js/iOS-timer.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.epicHover-fadeZoom.js"></script>
+<script type="text/javascript" src="../../js/jquery.epicfullscreen.js"></script>
+<script type="text/javascript" src="../../js/jquery.masonry.js"></script>
+<script type="text/javascript" src="../../js/jquery.tweet.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+	
+			/*device check
+			---------------------*/
+			
+			var isMobile = false;
+	
+			if( navigator.userAgent.match(/Android/i) || 
+				navigator.userAgent.match(/webOS/i) ||
+				navigator.userAgent.match(/iPhone/i) || 
+				navigator.userAgent.match(/iPad/i)|| 
+				navigator.userAgent.match(/iPod/i) || 
+				navigator.userAgent.match(/BlackBerry/i)){
+								
+					isMobile = true;
+							
+			}
+			
+			$(document).ready(function(){
+			
+				/*epic hover plugin
+				---------------------*/
+				
+				$(function() {
+				
+					$('.thumb').epicHoverFadeZoom({
+						 
+							overlayColor:'#000',						//Hex: #xxxx
+							fontColor:'#fff',							//Hex: #xxxx
+							captionDirection:'topToBottom', 			//String: caption slide in/out direction
+							opacity: 0.8,								//Integer: 0-1
+							transitionSpeed:600,						//Integer: transitions speed, in milliseconds
+							easing:'swing',								//String: easing method - see http://jqueryui.com/demos/effect/easing.html
+							padding: 0,									//Integer: padding
+							mobileActive:false,							//Boolean: whether to activate/deactivate for mobile
+							zoom:50										//Integer: zoom factor
+						 
+					});	
+				
+				});
+				
+				/*epic fullscreen plugin
+				---------------------*/
+				
+				$(function() {
+				
+				$('.epicFullscreen').epicFullscreen({
+					 
+						opacity:0.2,
+						background:'#000',
+						pattern:true
+					 
+					 });	
+						
+				});
+				
+				/*twitter plugin
+				---------------------*/
+				
+				$(function(){
+				
+				  $("#filter").tweet({
+					count: 1,
+					fetch: 20,
+					filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
+					username: "udfrance"
+				  });
+				  
+				});
+			
+			});
+			
+			/*grid
+			---------------------*/
+			
+			/*init*/
+			$(function(){
+			
+				var cols = 3
+				var masonry = $('#grid');
+			
+				calculateCols();
+		
+				// initialize masonry
+				masonry.imagesLoaded(function(){
+					
+					masonry.masonry({
+						itemSelector: '.thumb',
+						isResizable: true,
+						columnWidth:Math.floor((masonry.width()/ cols))
+					  });
+					
+				});
+				
+			  /*resize*/
+			  $(window).resize(function(){
+					
+					
+					calculateCols();
+					
+					masonry.imagesLoaded(function(){
+					
+					  masonry.masonry({
+						itemSelector: '.thumb',
+						isResizable: false,
+						 isAnimated: false,
+						columnWidth:Math.floor((masonry.width() / cols))
+					  });
+				
+					});
+					
+				});
+				
+				function calculateCols (){
+				
+					if(masonry.width() <= 426){
+					
+						 cols=2;
+					 
+					}else{
+				
+						cols=3;
+				
+					}
+				}
+
+				$('.flexslider').flexslider({
+									
+						animation: "face",
+						slideDirection: "horizontal",
+						slideshow: true,
+						slideshowSpeed: 3500,
+						animationDuration: 500,
+						directionNav: true,
+						controlNav: true 
+							
+				 });
+			
+		  });
+
+</script>
+
+</head>
+<body>
+	
+    <!--background image-->
+	<div class="epicFullscreen">
+		<img class="epicImg" src="../../images/back.jpg" alt=""/>
+	</div>
+
+	<!--start header-->
+    <div id="header-wrapper">
+    	<div id="header-inner">
+        	<header>
+            	<div id="logo">
+                	<a href="index.html"><img src="../../images/logo_white_200.png" alt="ew logo" /></a>
+                </div>
+                
+                <!--mobileMenu toggle-->
+             	<div class="mobileMenuToggle"><a href=""></a></div>
+                
+  					<nav>
+               <ul class="navigation">
+                        <li><a href="../../index.html">English</a></li>
+                        <li><a href="../index.html">主页</a></li>
+                        <li><a href="../about.html">关于音乐节</a>
+                        <ul class="sub-menu">
+                        <li><a href="../schedule.html">日程安排</a></li>
+                            	<li><a href="../poster.html">海报</a></li>
+							</ul></li>
+                        <li><a class="active" href="../faculty.html">师资力量</a></li>
+                        <li><a href="../application.html">申请程序</a>
+                            <ul class="sub-menu">
+                                <li><a href="../tuition.html">学费</a></li>
+                                <li><a href="../payment.html">支付方式</a></li>
+                            </ul>   
+                        </li>
+                        <li><a href="travel.html">旅行</a>
+                            <ul class="sub-menu"> 
+                                <li><a href="../accommodations.html">食宿</a></li>
+                                <li><a href="weihai.html">关于威海</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="../contact.html">联系方式</a></li>
+                        
+                    </ul>
+			  </nav>
+              
+        	</header>
+        </div>
+    </div>
+    <!--start content-->
+    <div id="content-wrapper">
+    	<section id="ajaxpage" class="pages clearfix">
+			<!--start project display-->
+            <div class="display-image" style="width:100%;height:auto;">
+                <img src="../../images/fac6.jpg" alt=""/>
+                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
+                    	<div></div>
+                 </div>
+            </div>
+
+           <h3>尹鹰</h3>
+           <p>	尹鹰教授，中国海洋大学艺术系副主任，中国钢琴学会理事，山东钢琴专业委员会副会长，青岛钢琴专业委员会副会长，青岛高校联盟副主席。三十多年来一直活跃在全国及省内的音乐舞台上，曾与我国著名指挥家严良堃（中央乐团）、杨又青（中国歌剧院）、许知俊（中央歌剧院）吴玲芬（中央音乐学院）、著名唱家、声乐教育家周小燕（上海音乐学院）、著名歌剧导演李稻川（中国歌剧院）和著名歌唱家梁美珍、李展（中央乐团）、魏松（上海歌剧院院长、我国著名男高音歌唱家）、张峰（上海歌剧院著名男中音歌唱家）、李秀英（上海音乐学院副教授、著名女高音歌唱家）、美国男低音歌唱家甘柯-格舍夫和刘秀茹教授（美国匹兹堡渡肯大学音乐学院声乐系主任）、意大利男中音歌唱家马龙·邦凡蒂等合作排演了交响乐、歌剧、独唱音乐会并作为上海音乐学院周小燕歌剧中心的特约伴奏赴沪协助工作，受到以上专家学者的高度评价和赞扬。&#x0A;曾与我省众多的艺术家们合作，排演了李斯特、莫扎特、贝多芬、格什温、拉赫曼尼诺夫、柴可夫斯基、格里格及我省作曲家创作的多部钢琴协奏曲、交响乐，十余部歌剧，多次举办独奏音乐会，为无数场独奏（唱）音乐会伴奏。曾获山东青年演员器乐比赛一等奖，是山东省文革后八十年代演奏钢琴协奏曲《黄河》及根据京剧《红灯记》改编的钢琴组曲的第一人，也是山东省首位拉赫玛尼诺夫第二钢琴协奏曲及柴可夫斯基第一钢琴协奏曲的演奏者。二十世纪末到二十一世纪初二十多年间山东参加全国及省内外比赛的声（器）乐演（奏）员的获奖大部分出自尹鹰的伴奏。
+           演出比赛之余培养了众多的学生。这些学生现任教于上海音乐学院、上海同济大学音乐系、山东艺术学院以及国内其他音乐艺术院校和其他文理科大学、文艺团体，有的已数次在国际、国内的钢琴比赛中获头奖，许多学生在全国、全省的钢琴考级中获得了优异的成绩。
+</p>
+          
+          <!--folio nav-->
+          <div id="folio-navigation">
+          	<ul>
+            	<li id="prevProject">
+                	<a href="fac-2.html" title="Previous Project"></a>
+                </li>
+                <li id="closeProject">
+                	<a href="../faculty.html" title="Back to Grid"></a>
+                </li>
+                <li id="nextProject">
+                	<a href="fac-4.html" title="Next Project"></a>
+                </li>
+             </ul>
+          </div>
+          
+        </section>
+    </div>
+   <!--start footer-->
+    <div id="footer-wrapper">
+    	<div id="footer-top" class="clearfix">
+        	<footer>
+            	<div class="column_one_half column-footer-widget">
+                	<div class="widget_text">
+                        <h6 class="widgettitle">East/West Piano Fesitval</h6>
+                        <p>East/West International Piano Festival is a piano festival founded by Dr. David Northington.  <a href="about.html">Read More.</a></p>
+					</div>
+                </div>
+                <div class="column_one_half last column-footer-widget last">
+                    <div class="widget_text">
+                		<h6 class="widgettitle">Contact</h6>
+                        <p>Ms. Ruixi Niu</p>
+                        <p>Tel: +1 215 421 7502
+                        Mail: <a href="mailto:nruixi622@gmail.com">nruixi622@gmail.com</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div id="footer-bottom">
+        	<footer>
+            	<!--social networks-->
+                <p class="footer-copyright">Copy Right Reserved - East/West International Piano Festival</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
