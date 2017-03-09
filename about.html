@@ -1,276 +1,274 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
 
-<title>EAST/WEST International Piano Festival</title>
+		<title>EAST/WEST International Piano Festival</title>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/flexslider.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css"/>
+		<link rel="stylesheet" type="text/css" href="css/epicfullscreen.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/udt_shortcodes.css" />
+		<link rel="stylesheet" type="text/css" href="css/udt_media_queries.css" />
 
-<link rel="stylesheet" type="text/css" href="css/flexslider.css" />
-<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css"/>
-<link rel="stylesheet" type="text/css" href="css/epicfullscreen.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="css/udt_shortcodes.css" />
-<link rel="stylesheet" type="text/css" href="css/udt_media_queries.css" />
+		<!--font-->
+		<link rel="stylesheet" type="text/css" href="css/font/bebasneue.css"  charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/quicksand.css" />
 
-<!--font-->
-<link rel="stylesheet" type="text/css" href="css/font/bebasneue.css"  charset="utf-8" />
-<link rel="stylesheet" type="text/css" href="css/quicksand.css" />
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 
-<!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+		<!--js-->
+		<script type="text/javascript" src="js/iOS-timer.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/jquery.epicHover-fadeZoom.js"></script>
+		<script type="text/javascript" src="js/jquery.epicfullscreen.js"></script>
+		<script type="text/javascript" src="js/jquery.masonry.js"></script>
+		<script type="text/javascript" src="js/jquery.tweet.js"></script>
+		<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
 
-<!--js-->
-<script type="text/javascript" src="js/iOS-timer.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/jquery.epicHover-fadeZoom.js"></script>
-<script type="text/javascript" src="js/jquery.epicfullscreen.js"></script>
-<script type="text/javascript" src="js/jquery.masonry.js"></script>
-<script type="text/javascript" src="js/jquery.tweet.js"></script>
-<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-
-<script type="text/javascript">
-	
-			/*device check
-			---------------------*/
-			
-			var isMobile = false;
-	
-			if( navigator.userAgent.match(/Android/i) || 
-				navigator.userAgent.match(/webOS/i) ||
-				navigator.userAgent.match(/iPhone/i) || 
-				navigator.userAgent.match(/iPad/i)|| 
-				navigator.userAgent.match(/iPod/i) || 
-				navigator.userAgent.match(/BlackBerry/i)){
-								
-					isMobile = true;
-							
-			}
-			
-			$(document).ready(function(){
-			
-				/*epic hover plugin
-				---------------------*/
-				
-				$(function() {
-				
-					$('.thumb').epicHoverFadeZoom({
-						 
-							overlayColor:'#000',						//Hex: #xxxx
-							fontColor:'#fff',							//Hex: #xxxx
-							captionDirection:'topToBottom', 			//String: caption slide in/out direction
-							opacity: 0.8,								//Integer: 0-1
-							transitionSpeed:600,						//Integer: transitions speed, in milliseconds
-							easing:'swing',								//String: easing method - see http://jqueryui.com/demos/effect/easing.html
-							padding: 0,									//Integer: padding
-							mobileActive:false,							//Boolean: whether to activate/deactivate for mobile
-							zoom:50										//Integer: zoom factor
-						 
-					});	
-				
-				});
-				
-				/*epic fullscreen plugin
-				---------------------*/
-				
-				$(function() {
-				
-				$('.epicFullscreen').epicFullscreen({
-					 
-						opacity:0.2,
-						background:'#000',
-						pattern:true
-					 
-					 });	
-						
-				});
-				
-				/*twitter plugin
-				---------------------*/
-				
-				$(function(){
-				
-				  $("#filter").tweet({
-					count: 1,
-					fetch: 20,
-					filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
-					username: "udfrance"
-				  });
-				  
-				});
-			
-			});
-			
-			/*grid
-			---------------------*/
-			
-			/*init*/
-			$(function(){
-			
-				var cols = 3
-				var masonry = $('#grid');
-			
-				calculateCols();
+		<script type="text/javascript">
 		
-				// initialize masonry
-				masonry.imagesLoaded(function(){
-					
-					masonry.masonry({
-						itemSelector: '.thumb',
-						isResizable: true,
-						columnWidth:Math.floor((masonry.width()/ cols))
-					  });
-					
-				});
+				/*device check
+				---------------------*/
 				
-			  /*resize*/
-			  $(window).resize(function(){
-					
-					
-					calculateCols();
-					
-					masonry.imagesLoaded(function(){
-					
-					  masonry.masonry({
-						itemSelector: '.thumb',
-						isResizable: false,
-						 isAnimated: false,
-						columnWidth:Math.floor((masonry.width() / cols))
-					  });
+				var isMobile = false;
+		
+				if( navigator.userAgent.match(/Android/i) || 
+					navigator.userAgent.match(/webOS/i) ||
+					navigator.userAgent.match(/iPhone/i) || 
+					navigator.userAgent.match(/iPad/i)|| 
+					navigator.userAgent.match(/iPod/i) || 
+					navigator.userAgent.match(/BlackBerry/i)){
+									
+						isMobile = true;
+								
+				}
 				
+				$(document).ready(function(){
+				
+					/*epic hover plugin
+					---------------------*/
+					
+					$(function() {
+					
+						$('.thumb').epicHoverFadeZoom({
+							 
+								overlayColor:'#000',						//Hex: #xxxx
+								fontColor:'#fff',							//Hex: #xxxx
+								captionDirection:'topToBottom', 			//String: caption slide in/out direction
+								opacity: 0.8,								//Integer: 0-1
+								transitionSpeed:600,						//Integer: transitions speed, in milliseconds
+								easing:'swing',								//String: easing method - see http://jqueryui.com/demos/effect/easing.html
+								padding: 0,									//Integer: padding
+								mobileActive:false,							//Boolean: whether to activate/deactivate for mobile
+								zoom:50										//Integer: zoom factor
+							 
+						});	
+					
 					});
 					
+					/*epic fullscreen plugin
+					---------------------*/
+					
+					$(function() {
+					
+					$('.epicFullscreen').epicFullscreen({
+						 
+							opacity:0.2,
+							background:'#000',
+							pattern:true
+						 
+						 });	
+							
+					});
+					
+					/*twitter plugin
+					---------------------*/
+					
+					$(function(){
+					
+					  $("#filter").tweet({
+						count: 1,
+						fetch: 20,
+						filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
+						username: "udfrance"
+					  });
+					  
+					});
+				
 				});
 				
-				function calculateCols (){
+				/*grid
+				---------------------*/
 				
-					if(masonry.width() <= 426){
-					
-						 cols=2;
-					 
-					}else{
+				/*init*/
+				$(function(){
 				
-						cols=3;
+					var cols = 3
+					var masonry = $('#grid');
 				
-					}
-				}
-
-				$('.flexslider').flexslider({
-									
-						animation: "face",
-						slideDirection: "horizontal",
-						slideshow: true,
-						slideshowSpeed: 3500,
-						animationDuration: 500,
-						directionNav: true,
-						controlNav: true 
-							
-				 });
+					calculateCols();
 			
-		  });
+					// initialize masonry
+					masonry.imagesLoaded(function(){
+						
+						masonry.masonry({
+							itemSelector: '.thumb',
+							isResizable: true,
+							columnWidth:Math.floor((masonry.width()/ cols))
+						  });
+						
+					});
+					
+				  /*resize*/
+				  $(window).resize(function(){
+						
+						
+						calculateCols();
+						
+						masonry.imagesLoaded(function(){
+						
+						  masonry.masonry({
+							itemSelector: '.thumb',
+							isResizable: false,
+							 isAnimated: false,
+							columnWidth:Math.floor((masonry.width() / cols))
+						  });
+					
+						});
+						
+					});
+					
+					function calculateCols (){
+					
+						if(masonry.width() <= 426){
+						
+							 cols=2;
+						 
+						}else{
+					
+							cols=3;
+					
+						}
+					}
 
-</script>
+					$('.flexslider').flexslider({
+										
+							animation: "face",
+							slideDirection: "horizontal",
+							slideshow: true,
+							slideshowSpeed: 3500,
+							animationDuration: 500,
+							directionNav: true,
+							controlNav: true 
+								
+					 });
+				
+			  });
 
-</head>
-<body>
-	
-    <!--background image-->
-	<div class="epicFullscreen">
-		<img class="epicImg" src="images/back.jpg" alt=""/>
-	</div>
+	</script>
 
-	<!--start header-->
-    <div id="header-wrapper">
-    	<div id="header-inner">
-        	<header>
-            	<div id="logo">
-                	<a href="index.html"><img src="images/logo_white_200.png" alt="ew logo" /></a>
-                </div>
-                
-                <!--mobileMenu toggle-->
-             	<div class="mobileMenuToggle"><a href=""></a></div>
-                
-  					<nav>
-                	<ul class="navigation">
-                    	                        <li><a href="ch/index.html">中文版</a></li>
-
-						<li><a href="index.html">Home</a></li>
-                        <li><a class="active" href="about.html">About</a>
-	                    	<ul class="sub-menu">
-	                    		<li><a href="schedule.html">Schedule</a></li>
-	                        	<li><a href="poster.html">Poster</a></li>
-							</ul></li>
-                        <li><a href="faculty.html">Faculty</a></li>
-                        <li><a href="application.html">Application</a>
-                        	<ul class="sub-menu">
-                            	<li><a href="tuition.html">Tuition</a></li>
-								<li><a href="payment.html">Payment</a></li>
-							</ul>	
-                        </li>
-                        <li><a href="travel.html">Travel</a>
-                    		<ul class="sub-menu"> 
-                            	<li><a href="accommodations.html">Accommodations</a></li>
-                            	<li><a href="fac/weihai.html">Weihai</a></li>
-							</ul> 
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
-
-                    </ul>
-			  </nav>
-              
-        	</header>
-        </div>
-    
-    <!--start content-->
-    <div id="content-wrapper">
-    
-    	<section class="pages clearfix">
-        	<!--start section title-->
-        	<h6>  </h6>
-            <div class="display-image" style="width:100%;height:auto;">
-                <img src="images/index.jpg" alt=""/>
-                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
-                    	<div>About The Festival</div>
-                 </div>
-            </div>
-            <!--start teaser-->            
+	</head>
+	<body>
 		
-				<p><font size="4"><font color="red">The East/West International Piano Festival invites you to join us for its second season in the beautiful seaside resort city of Qingdao, China! </font> </p>
-				Embracing China’s extraordinarily scenic views and rich cultural heritage, this two-week festival promises to be an unforgettable, once-in-a-lifetime experience. 
-				The Festival is open to outstanding pianists from throughout the world, and will include intensive private lesson and master class instruction from extraordinary international artist teachers. There will also be opportunities for all participants to perform in public concerts at the conclusion of the Festival. In addition, the artist faculty will participate in special concerts given for the participants.</font></p>
-		
-        </section>
-    </div>
-    <!--start footer-->
-   <div id="footer-wrapper">
-    	<div id="footer-top" class="clearfix">
-        	<footer>
-            	<div class="column_one_half column-footer-widget">
-                	<div class="widget_text">
-                        <h6 class="widgettitle">East/West Piano Fesitval</h6>
-                        <p>East/West International Piano Festival is a piano festival founded by Dr. David Northington.  <a href="about.html">Read More.</a></p>
+		<!--background image-->
+		<div class="epicFullscreen">
+			<img class="epicImg" src="images/back.jpg" alt=""/>
+		</div>
+
+		<!--start header-->
+		<div id="header-wrapper">
+			<div id="header-inner">
+				<header>
+					<div id="logo">
+						<a href="index.html"><img src="images/logo_white_200.png" alt="ew logo" /></a>
 					</div>
-                </div>
-                <div class="column_one_half last column-footer-widget last">
-                    <div class="widget_text">
-                		<h6 class="widgettitle">Contact</h6>
-                        <p>Ms. Ruixi Niu</p>
-                        <p>Tel: +1 215 421 7502
-                        Email: <a href="mailto:ewpianofest@gmail.com">ewpianofest@gmail.com</a></p>
-                    </div>
-                </div>
-            </footer>
-        </div>
-        <div id="footer-bottom">
-        	<footer>
-            	<!--social networks-->
-                <p class="footer-copyright">Copyright Reserved - East/West International Piano Festival</p>
-            </footer>
-        </div>
-    </div>
-</body>
+					
+					<!--mobileMenu toggle-->
+					<div class="mobileMenuToggle"><a href=""></a></div>	
+					<nav>
+						<ul class="navigation">
+							<li><a href="ch/index.html">中文版</a></li>
+							<li><a href="index.html">Home</a></li>
+							<li><a class="active" href="about.html">About</a>
+								<ul class="sub-menu">
+									<li><a href="schedule.html">Schedule</a></li>
+									<li><a href="poster.html">Poster</a></li>
+								</ul>
+							</li>
+							<li><a href="faculty.html">Faculty</a></li>
+							<li><a href="application.html">Application</a>
+								<ul class="sub-menu">
+									<li><a href="tuition.html">Tuition</a></li>
+									<li><a href="payment.html">Payment</a></li>
+								</ul>	
+							</li>
+							<li><a href="travel.html">Travel</a>
+								<ul class="sub-menu"> 
+									<li><a href="accommodations.html">Accommodations</a></li>
+									<li><a href="fac/weihai.html">Weihai</a></li>
+								</ul> 
+							</li>
+							<li><a href="contact.html">Contact</a></li>
+
+						</ul>
+					</nav>
+				</header>
+			</div>
+		</div>
+		
+		<!--start content-->
+		<div id="content-wrapper">
+			<section class="pages clearfix">
+				<!--start section title-->
+				<h6>  </h6>
+				<div class="display-image" style="width:100%;height:auto;">
+					<img src="images/index.jpg" alt=""/>
+					<div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
+							<div>About The Festival</div>
+					</div>
+				</div>
+				<!--start teaser-->            
+			
+					<p><font size="4" color="white">The East/West International Piano Festival invites you to join us for its second season in the beautiful seaside resort city of Qingdao, China! </font> </p>
+					Embracing China’s extraordinarily scenic views and rich cultural heritage, this two-week festival promises to be an unforgettable, once-in-a-lifetime experience. 
+					The Festival is open to outstanding pianists from throughout the world, and will include intensive private lesson and master class instruction from extraordinary international artist teachers. There will also be opportunities for all participants to perform in public concerts at the conclusion of the Festival. In addition, the artist faculty will participate in special concerts given for the participants.</font></p>
+			
+			</section>
+		</div>
+		<!--start footer-->
+		<div id="footer-wrapper">
+			<div id="footer-top" class="clearfix">
+				<footer>
+					<div class="column_one_half column-footer-widget">
+						<div class="widget_text">
+							<h6 class="widgettitle"><font color="white">East/West Piano Fesitval</font></h6>
+							<p>East/West International Piano Festival is a piano festival founded by Dr. David Northington.  <a href="about.html"><font color="white">Read More.</font></a></p>
+						</div>
+					</div>
+					<div class="column_one_half last column-footer-widget last">
+						<div class="widget_text">
+							<h6 class="widgettitle"><font color="white">Contact</font></h6>
+							<p>Ms. Ruixi Niu</p>
+							<p>Tel: +1 215 421 7502
+							Email: <a href="mailto:ewpianofest@gmail.com"><font color="white">ewpianofest@gmail.com</font></a></p>
+						</div>
+					</div>
+				</footer>
+			</div>
+			<div id="footer-bottom">
+				<footer>
+					<!--social networks-->
+					<p class="footer-copyright">Copyright Reserved - East/West International Piano Festival</p>
+				</footer>
+			</div>
+		</div>
+	</body>
 </html>
