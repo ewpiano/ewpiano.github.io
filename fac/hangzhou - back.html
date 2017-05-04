@@ -56,7 +56,7 @@
 				
 					loop : true,									//Boolean: whether slideshow should loop or not	
 					slideShow: true,								//Boolean: use slideshow or not
-					autoPlay: true,								//Boolean: autoplay uplon load or not
+					autoPlay: false,								//Boolean: autoplay uplon load or not
 					slideShowInterval :3500,						//Integer: slideshow cycling speed, in milliseconds
 					transitionSpeed : 700,							//Integer: transitions speed, in milliseconds
 					startSlide : 0,									//Integer: starts at 0
@@ -159,20 +159,22 @@
     </div>     
  	<!--start content-->
     <div id="content-wrapper">
-		<section class="pages clearfix">
-          <!--end slider-->
-            <div class="display-image" style="width:100%;height:auto;" align="center">
-                <img src="../images/hangzhou1.jpg" alt=""/>
-				<br>
-				<img src="../images/hangzhou2.jpg" alt=""/>
-				<br>
-				<img src="../images/hangzhou3.jpg" alt=""/>
-				<br>
-				<img src="../images/hangzhou4.jpg" alt=""/>
-                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
-                 </div>
+    	<section id="ajaxpage" class="slider-full-width clearfix">
+            <!--start slider-->
+            <div id="epicSlider1" class="epicSlider theme-default slider-wrapper">
+                <div id="slides">
+                    <img src="../images/hangzhou1.jpg"alt="Image 1" title="#html-content1" />
+                    <img src="../images/hangzhou2.jpg" alt="Image 2" title="#html-content2" />
+                    <img src="../images/hangzhou3.jpg" alt="Image 3" title="#html-content3"/>
+                    <img src="../images/hangzhou4.jpg" alt="Image 4" title="#html-content4"/>   
+                </div>
+                         
             </div>
-			</section>
+          <!--end slider-->
+          
+          <!--folio nav-->
+          
+  </section>
   </div>
    <!--start footer-->
      <div id="footer-wrapper">
