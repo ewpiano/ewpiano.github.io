@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+
+<title>EAST/WEST International Piano Festival</title>
+
+<!--css-->
+<link rel="stylesheet" type="text/css" href="../css/epicslider.css" />
+<link rel="stylesheet" type="text/css" href="../css/epicslider-reponsive.css" />
+<link rel="stylesheet" type="text/css" href="../css/epicfullscreen.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/udt_shortcodes.css" />
+<link rel="stylesheet" type="text/css" href="../css/udt_media_queries.css" />
+
+<!--font-->
+<link rel="stylesheet" type="text/css" href="font/bebasneue.css" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/quicksand.css" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--js-->
+<script type="text/javascript" src="../js/iOS-timer.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-touch-swipe-1.0.js"></script>
+<script type="text/javascript" src="../js/jquery.epicfullscreen.js"></script>
+<script type="text/javascript" src="../js/jquery.epicslider.js"></script>
+<script type="text/javascript" src="../js/jquery.tweet.js"></script>
+
+
+<script type="text/javascript">
+			var isMobile = false;
+	
+			if( navigator.userAgent.match(/Android/i) || 
+				navigator.userAgent.match(/webOS/i) ||
+				navigator.userAgent.match(/iPhone/i) || 
+				navigator.userAgent.match(/iPad/i)|| 
+				navigator.userAgent.match(/iPod/i) || 
+				navigator.userAgent.match(/BlackBerry/i)){
+								
+					isMobile = true;
+							
+			}
+		
+			$(window).load(function() {
+			
+				//call slider
+				$('.epicSlider').epicSlider({
+				
+					loop : true,									//Boolean: whether slideshow should loop or not	
+					slideShow: true,								//Boolean: use slideshow or not
+					autoPlay: true,								//Boolean: autoplay uplon load or not
+					slideShowInterval :3500,						//Integer: slideshow cycling speed, in milliseconds
+					transitionSpeed : 700,							//Integer: transitions speed, in milliseconds
+					startSlide : 0,									//Integer: starts at 0
+					shuffleSlides:false,							//Boolean: shuffle slides or not
+					stack:false,									//Boolean: whether slides should stack
+					easing : 'swing', 								//String: easing method - see http://jqueryui.com/demos/effect/easing.html
+					fx : 'leftToRight',								//String: none, fade, leftToRight, topToBottom 
+					fxmobile : 'leftToRight',						//String: mobile effect -  none, fade, leftToRight, topToBottom 
+					pattern :true,									//Boolean: add pattern or not
+					callback: function() {}							//Call back
+				});	
+				
+				
+			});
+			
+			$(document).ready(function(){
+			
+				/*epic fullscreen plugin
+				---------------------*/
+				
+				$(function() {
+				
+				$('.epicFullscreen').epicFullscreen({
+					 
+						opacity:0.2,
+						background:'#000',
+						pattern:true
+					 
+					 });	
+						
+				});
+			
+			});
+			
+			/*twitter plugin
+			---------------------*/
+			
+			$(function(){
+			
+			  $("#filter").tweet({
+				count: 1,
+				fetch: 20,
+				filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
+				username: "udfrance"
+			  });
+			  
+			});
+</script>
+
+
+</head>
+<body>
+
+	<!--background image-->
+	<div class="epicFullscreen">
+		<img class="epicImg" src="../images/back.jpg" alt=""/>
+	</div>
+
+	<!--start header-->
+    <div id="header-wrapper">
+    	<div id="header-inner">
+            <header>
+                <div id="logo">
+                    <a href="index.html"><img src="../images/logo_white.png" alt="ew logo" /></a>
+                </div>
+                
+                <!--mobileMenu toggle-->
+                <div class="mobileMenuToggle"><a href=""></a></div>
+                
+                    <nav>
+                    <ul class="navigation">
+                        <li><a href="../ch/index.html">中文版</a></li>
+                        <li><a  href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a>
+                        <ul class="sub-menu">
+                        <li><a href="../schedule.html">Schedule</a></li>
+                                <!--<li><a href="../poster.html">Poster</a></li>-->
+                            </ul></li>
+                        <li><a href="../faculty.html">Faculty</a></li>
+                        <li><a href="../application.html">Application</a>
+                            <ul class="sub-menu">
+                                <li><a href="../tuition.html">Tuition</a></li>
+                                <!--<li><a href="../payment.html">Payment</a></li>-->
+                            </ul>   
+                        </li>
+                        <li><a class="active" href="../travel.html">Travel</a>
+                            <ul class="sub-menu"> 
+                                <li><a href="../accommodations.html">Accommodations</a></li>
+                                <li><a href="hangzhou.html">Hangzhou</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="../contact.html">Contact</a></li>
+                        
+                    </ul>
+              </nav>
+              
+            </header>
+        </div>
+    </div>     
+ 	<!--start content-->
+    <div id="content-wrapper">
+		<section class="pages clearfix">
+          <!--end slider-->
+		  <p>Shenzhen, in southeastern China, is a modern metropolis that links Hong Kong to China’s mainland. It's known for its shopping destinations, including Luohu Commercial City, a massive mall with a vast array of wares, from tailors’ custom clothing to faux designer bags.</p>
+            <div class="display-image" style="width:100%;height:auto;" align="center">
+                <img src="../images/shenzhen1.jpg" alt=""/>
+				<br>
+				<img src="../images/shenzhen2.jpg" alt=""/>
+				<br>
+				<img src="../images/shenzhen3.jpg" alt=""/>
+				<br>
+				<img src="../images/shenzhen4.jpg" alt=""/>
+                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
+                 </div>
+            </div>
+			</section>
+  </div>
+   <!--start footer-->
+     <div id="footer-wrapper">
+        <div id="footer-top" class="clearfix">
+            <footer>
+                <div class="column_one_half column-footer-widget">
+                    <div class="widget_text">
+                        <h6 class="widgettitle"><font color = 'white'>East/West International Piano Festival</font></h6>
+                        <p>East/West International Piano Festival is a piano festival founded by Dr. David Northington.</p>
+                    </div>
+                </div>
+                <div class="column_one_half last column-footer-widget last">
+                    <div class="widget_text">
+                        <h6 class="widgettitle"><font color = 'white'>Contact</font></h6>
+                        <p>Ms. Ruixi Niu</p>
+                        <p>Tel: +1 215 421 7502
+                        Mail: <a href="mailto:ewpianofest@gmail.com"><font color = 'white'>ewpianofest@gmail.com</font></a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div id="footer-bottom">
+            <footer>
+                <!--social networks-->
+                <p class="footer-copyright">Copyright Reserved - East West International Piano Festival</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
