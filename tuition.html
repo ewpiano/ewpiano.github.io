@@ -257,58 +257,23 @@
 			<div class="divider">
 </div>
 			<div class="clearfix">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-</head>
+				
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="J7WFFTFGM96H2">
+<table>
+<tr><td><input type="hidden" name="on0" value="Package Contents">Package Contents</td></tr><tr><td><select name="os0">
+	<option value="Application Fee">Application Fee $100.00 USD</option>
+	<option value="Non-refundable Tuition Deposit">Non-refundable Tuition Deposit $400.00 USD</option>
+	<option value="Tuition (after $400 deposit)">Tuition (after $400 deposit) $2,400.00 USD</option>
+	<option value="Full Student Tuition Package">Full Student Tuition Package $2,900.00 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
 
-<body>
-    <div id="paypal-button-container"></div>
-
-    <script>
-        paypal.Button.render({
-
-            env: 'sandbox', // sandbox | production
-
-            // Show the buyer a 'Pay Now' button in the checkout flow
-            commit: true,
-
-            // payment() is called when the button is clicked
-            payment: function() {
-
-                // Set up a url on your server to create the payment
-                var CREATE_URL = '/demo/checkout/api/paypal/payment/create/';
-
-                // Make a call to your server to set up the payment
-                return paypal.request.post(CREATE_URL)
-                    .then(function(res) {
-                        return res.paymentID;
-                    });
-            },
-
-            // onAuthorize() is called when the buyer approves the payment
-            onAuthorize: function(data, actions) {
-
-                // Set up a url on your server to execute the payment
-                var EXECUTE_URL = '/demo/checkout/api/paypal/payment/execute/';
-
-                // Set up the data you need to pass to your server
-                var data = {
-                    paymentID: data.paymentID,
-                    payerID: data.payerID
-                };
-
-                // Make a call to your server to execute the payment
-                return paypal.request.post(EXECUTE_URL, data)
-                    .then(function (res) {
-                        window.alert('Payment Complete!');
-                    });
-            }
-
-        }, '#paypal-button-container');
-    </script>
-</body> 
 </div>
 	</div>
    			
