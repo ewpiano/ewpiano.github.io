@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+
+<title>EAST/WEST Internatinal Piano Festival</title>
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="../css/flexslider.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.fancybox-1.3.4.css"/>
+<link rel="stylesheet" type="text/css" href="../css/epicfullscreen.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/udt_shortcodes.css" />
+<link rel="stylesheet" type="text/css" href="../css/udt_media_queries.css" />
+
+<!--font-->
+<link rel="stylesheet" type="text/css" href="../css/font/bebasneue.css"  charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/quicksand.css" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--js-->
+<script type="text/javascript" src="../js/iOS-timer.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery.epicHover-fadeZoom.js"></script>
+<script type="text/javascript" src="../js/jquery.epicfullscreen.js"></script>
+<script type="text/javascript" src="../js/jquery.masonry.js"></script>
+<script type="text/javascript" src="../js/jquery.tweet.js"></script>
+<script type="text/javascript" src="../js/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+	
+			/*device check
+			---------------------*/
+			
+			var isMobile = false;
+	
+			if( navigator.userAgent.match(/Android/i) || 
+				navigator.userAgent.match(/webOS/i) ||
+				navigator.userAgent.match(/iPhone/i) || 
+				navigator.userAgent.match(/iPad/i)|| 
+				navigator.userAgent.match(/iPod/i) || 
+				navigator.userAgent.match(/BlackBerry/i)){
+								
+					isMobile = true;
+							
+			}
+			
+			$(document).ready(function(){
+			
+				/*epic hover plugin
+				---------------------*/
+				
+				$(function() {
+				
+					$('.thumb').epicHoverFadeZoom({
+						 
+							overlayColor:'#000',						//Hex: #xxxx
+							fontColor:'#fff',							//Hex: #xxxx
+							captionDirection:'topToBottom', 			//String: caption slide in/out direction
+							opacity: 0.8,								//Integer: 0-1
+							transitionSpeed:600,						//Integer: transitions speed, in milliseconds
+							easing:'swing',								//String: easing method - see http://jqueryui.com/demos/effect/easing.html
+							padding: 0,									//Integer: padding
+							mobileActive:false,							//Boolean: whether to activate/deactivate for mobile
+							zoom:50										//Integer: zoom factor
+						 
+					});	
+				
+				});
+				
+				/*epic fullscreen plugin
+				---------------------*/
+				
+				$(function() {
+				
+				$('.epicFullscreen').epicFullscreen({
+					 
+						opacity:0.2,
+						background:'#000',
+						pattern:true
+					 
+					 });	
+						
+				});
+				
+				/*twitter plugin
+				---------------------*/
+				
+				$(function(){
+				
+				  $("#filter").tweet({
+					count: 1,
+					fetch: 20,
+					filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
+					username: "udfrance"
+				  });
+				  
+				});
+			
+			});
+			
+			/*grid
+			---------------------*/
+			
+			/*init*/
+			$(function(){
+			
+				var cols = 3
+				var masonry = $('#grid');
+			
+				calculateCols();
+		
+				// initialize masonry
+				masonry.imagesLoaded(function(){
+					
+					masonry.masonry({
+						itemSelector: '.thumb',
+						isResizable: true,
+						columnWidth:Math.floor((masonry.width()/ cols))
+					  });
+					
+				});
+				
+			  /*resize*/
+			  $(window).resize(function(){
+					
+					
+					calculateCols();
+					
+					masonry.imagesLoaded(function(){
+					
+					  masonry.masonry({
+						itemSelector: '.thumb',
+						isResizable: false,
+						 isAnimated: false,
+						columnWidth:Math.floor((masonry.width() / cols))
+					  });
+				
+					});
+					
+				});
+				
+				function calculateCols (){
+				
+					if(masonry.width() <= 426){
+					
+						 cols=2;
+					 
+					}else{
+				
+						cols=3;
+				
+					}
+				}
+
+				$('.flexslider').flexslider({
+									
+						animation: "face",
+						slideDirection: "horizontal",
+						slideshow: true,
+						slideshowSpeed: 3500,
+						animationDuration: 500,
+						directionNav: true,
+						controlNav: true 
+							
+				 });
+			
+		  });
+
+</script>
+
+</head>
+<body>
+	
+    <!--background image-->
+	<div class="epicFullscreen">
+		<img class="epicImg" src="../images/back.jpg" alt=""/>
+	</div>
+
+	<!--start header-->
+    <div id="header-wrapper">
+    	<div id="header-inner">
+        	<header>
+            	<div id="logo">
+                	<a href="../index.html"><img src="../images/logo_white_200.png" alt="ew logo" /></a>
+                </div>
+                
+                <!--mobileMenu toggle-->
+             	<div class="mobileMenuToggle"><a href=""></a></div>
+                
+  					<nav>
+               <ul class="navigation">
+                        <li><a href="../ch/index.html">中文版</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About</a>
+                        <ul class="sub-menu">
+                        <li><a href="../schedule.html">Schedule</a></li>
+	                        	<!--<li><a href="../poster.html">Poster</a></li>-->
+							</ul></li>
+                        <li><a class="active" href="../faculty.html">Faculty</a></li>
+                        <li><a href="../application.html">Application</a>
+                            <ul class="sub-menu">
+                                <li><a href="../tuition.html">Tuition</a></li>
+                                <!--<li><a href="../payment.html">Payment</a></li>-->
+                            </ul>   
+                        </li>
+                        <li><a href="travel.html">Travel</a>
+                            <ul class="sub-menu"> 
+                                <li><a href="../accommodations.html">Accommodations</a></li>
+                                <li><a href="seoul.html">Seoul</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="../contact.html">Contact</a></li>
+
+                        
+
+                    </ul>
+			  </nav>
+              
+        	</header>
+        </div>
+    </div>
+    <!--start content-->
+    <div id="content-wrapper">
+    	<section id="ajaxpage" class="pages clearfix">
+			<!--start project display-->
+            <div class="display-image" style="width:100%;height:auto;">
+                <img src="../images/Pagano.jpg" width="300" height="450" alt="" />
+                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
+                    	<div></div>
+                 </div>
+            </div>
+
+           <h3>Ciao Pagano</h3>
+           <p>
+“Pagano is such a fine performer that any opportunity to hear him should be seized”. Joseph McLellan, Washington Post<br>
+
+Pagano has performed throughout four continents in more than 900 public performances as recital soloist, chamber musician and as soloist with orchestras. He has premiered 36 works in concert halls worldwide, 25 of these were works written and dedicated to him by the composers, including several concertos piano and orchestra. He has also recorded several of these works. Pagano was the first pianist to perform the complete works of Schoenberg in several countries.<br>
+
+Among the remarkable premières was the performance of Pousseur’s Apostrophe, along with Beethoven’s Diabelli Variations in Washington D.C. and New York City, which received following reviews: “The Pousseur was transcendent, and Beethoven was absolutely first-class, simultaneously idiomatic and original.” New York Times. “I started jotting comments after each variation,  but I abandoned that as I realized I was being presented with a conception that was an incandescent entity.” Washington Post.<br>
+
+He performed with orchestras throughout the world conducted by such luminaries as Sergiu Comissiona, Camargo Guarnieri, Szimon Goldberg, Howard Griffits, John Neschling, James Sedares, Aylton Escobar, Eleazar de Carvalho, Silva Pereira, Fabio Meccheti, Ernest Bour, Morton Gould, Roberto Minczuk, Roberto Tibiriçá.<br>
+
+His programs are vast and have included great Masters of the XXth century; he performed Berg’s “Chamber Concerto”, Schoenberg’s Concerto, Bartók’s II Concerto for the first time ever in Brazil, Falla’s Harpsichord Concerto, as well as the complete works of Schoenberg; and a large number of world premières of contemporary composers such as Guarnieri ( 6th Sonatina, dedicated to him), Koellreutter ( Acronon, dedicated to him), Gilberto Mendes ( Concerto and Vento Noroeste, dedicated to him), Willy Correa de Oliveira ( Concerto, dedicated to him), James DeMars ( Tapestry and Concerto, dedicated to him), Almeida Prado ( Cartas Celestes III, Carta de Pero Vaz de Caminha dedicated to him) and many others.
+As Professor at the University of São Paulo, Brazil, Caio created the International Biennial of Music, which attracted many internationally acclaimed artists who collaborated with him, including Saschko Gawriloff, Cristof Caskel, Raphael Hillyer, Werner Taube, Henry Schuman. He also toured with Pierre Fournier, Janos Starker, Thomas Friedli, Szymon Goldberg and the Dutch Chamber Orchestra, Albor Rosenfeld, the St. Petersburg Quartet, Maria João Pires, Gerard Caussé, the St. Petersburg Quartet and the Jacques Thibaud Trio. Caio has been a featured artist at the Miami New World Festival, the Washington
+Interamerican Fest, the Grenoble Festival, the Megève Festival, the Merida Festival, the Montpellier Festival and many others.<br>
+
+A frequent performer in East Asia, Caio played in Beijing, Qingdao, Tokyo, Yokohama, Kobe, Kyoto, Osaka, and in Singapore at the Esplanade, the Botanical Gardens and at the SOTA, as well as in Taiwan.
+At ASU he created the Brazilian Arts Festival in 2000 ( followed by two CDs, the first with two works for piano and orchestra by Brazilian composer Camargo Guarnieri, with the Czech National Symphony ( including world première recordings of Guarnieriʼs “Chôro”), and the second with "Trio for piano violin and horn" by Almeida Prado, which he commissioned, both released by Summit Records) and the Steinway Chamber Music Festival in 2010, 2012 and 2014.
+He has adjudicated international competitions in Portugal, Switzerland, Singapore, Brazil, the USA, Panama. He became "Professor of the Year" at Arizona State University in 2010.<br>
+In partnership with Maria João Pires, Pagano created the Belgais Centre for Studies of the Arts in Portugal in 2000 and recorded "Sounds of Belgais" for Deutsche Grammophon. He created the Piano Department of the Institute Politechnic in Portugal.<br>
+
+Summit, Soundset, Deutsche Grammophon and Glissando labels publish his acclaimed recordings. His CD "Music for Children" by Heitor Villa-Lobos has received rave reviews which have included “CD of the Month” by BBC Music
+Magazine, and other magnificent reviews on Gramophone (Great Britain), CD Compact (Spain) and Fanfare (United States). In 2009 Soundset released a CD selected as CD of the week by National Public Radio NPR/KBAQ, called "Remembrance, volume I". Also in 2009 a CD with works of Brahms, Poulenc, Debussy and Berg ( with Carlos Alves, clarinet) was released by Soundset, and in 2010 Pagano was selected by the Magazine "Concerto" in Brazil, to have his new CD with Chopin and Schumann to be sent to 5,000 subscribers.
+In 2012 he released a CD with the three Brahms Sonatas for violin, with Emmanuele Baldini, and the Quintets of Schubert ( Trout) and Hummel with the Jacques Thibaud Trio, recorded live in Japan. In 2013 he released a CD with works of Chopin, for Soundset. In 2014 “Remembrance volume II” was also released by Soundset Records.
+Caio Pagano combines a profound knowledge of the Arts, Literature and Music, which characterizes his interpretations as authoritative and unique. His transcendent technique is accompanied by exuberant lyricism, intellect and a polished sense of style. Pagano is a Steinway Artist.<br>
+www.soundset.com
+glissando.com
+numérica-multimedia.pt
+www.summitrecords.com
+www.tresonamultimedia.com
+www.avantistudents.org
+</p>
+
+
+          
+          <!--folio nav-->
+          <div id="folio-navigation">
+          	<ul>
+            	<li id="prevProject">
+                	<a href="fac-Park.html" title="Previous Project"></a>
+                </li>
+                <li id="closeProject">
+                	<a href="../faculty.html" title="Back to Grid"></a>
+                </li>
+                <li id="nextProject">
+                	<a href="fac-Michelle.html" title="Next Project"></a>
+                </li>
+             </ul>
+          </div>
+          
+        </section>
+    </div>
+   <!--start footer-->
+		<div id="footer-wrapper">
+			<div id="footer-top" class="clearfix">
+				<footer>
+					<div class="column_one_half column-footer-widget">
+						<div class="widget_text">
+							<h6 class="widgettitle"><font color="white">East/West International Piano Festival</font></h6>
+							<p>East/West International Piano Festival is a piano festival founded by Dr. David Northington.</a></p>
+						</div>
+					</div>
+					<div class="column_one_half last column-footer-widget last">
+						<div class="widget_text">
+							<h6 class="widgettitle"><font color="white">Contact</font></h6>
+							<p>Ms. Ruixi Niu</p>
+							<p>Tel: +1 215 421 7502
+							Email: <a href="mailto:ewpianofest@gmail.com"><font color="white">ewpianofest@gmail.com</font></a></p>
+						</div>
+					</div>
+				</footer>
+			</div>
+			<div id="footer-bottom">
+				<footer>
+					<!--social networks-->
+					<p class="footer-copyright">Copyright Reserved - East/West International Piano Festival</p>
+				</footer>
+			</div>
+		</div>
+</body>
+</html>
