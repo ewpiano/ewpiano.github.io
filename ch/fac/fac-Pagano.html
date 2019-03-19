@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+
+<title>EAST/WEST Internatinal Piano Festival</title>
+
+<link rel="stylesheet" type="text/css" href="../../css/flexslider.css" />
+<link rel="stylesheet" type="text/css" href="../../css/jquery.fancybox-1.3.4.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/epicfullscreen.css" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/udt_shortcodes.css" />
+<link rel="stylesheet" type="text/css" href="../../css/udt_media_queries.css" />
+
+<!--font-->
+<link rel="stylesheet" type="text/css" href="../../css/font/bebasneue.css"  charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/quicksand.css" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--js-->
+<script type="text/javascript" src="../../js/iOS-timer.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.epicHover-fadeZoom.js"></script>
+<script type="text/javascript" src="../../js/jquery.epicfullscreen.js"></script>
+<script type="text/javascript" src="../../js/jquery.masonry.js"></script>
+<script type="text/javascript" src="../../js/jquery.tweet.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+    
+            /*device check
+            ---------------------*/
+            
+            var isMobile = false;
+    
+            if( navigator.userAgent.match(/Android/i) || 
+                navigator.userAgent.match(/webOS/i) ||
+                navigator.userAgent.match(/iPhone/i) || 
+                navigator.userAgent.match(/iPad/i)|| 
+                navigator.userAgent.match(/iPod/i) || 
+                navigator.userAgent.match(/BlackBerry/i)){
+                                
+                    isMobile = true;
+                            
+            }
+            
+            $(document).ready(function(){
+            
+                /*epic hover plugin
+                ---------------------*/
+                
+                $(function() {
+                
+                    $('.thumb').epicHoverFadeZoom({
+                         
+                            overlayColor:'#000',                        //Hex: #xxxx
+                            fontColor:'#fff',                           //Hex: #xxxx
+                            captionDirection:'topToBottom',             //String: caption slide in/out direction
+                            opacity: 0.8,                               //Integer: 0-1
+                            transitionSpeed:600,                        //Integer: transitions speed, in milliseconds
+                            easing:'swing',                             //String: easing method - see http://jqueryui.com/demos/effect/easing.html
+                            padding: 0,                                 //Integer: padding
+                            mobileActive:false,                         //Boolean: whether to activate/deactivate for mobile
+                            zoom:50                                     //Integer: zoom factor
+                         
+                    }); 
+                
+                });
+                
+                /*epic fullscreen plugin
+                ---------------------*/
+                
+                $(function() {
+                
+                $('.epicFullscreen').epicFullscreen({
+                     
+                        opacity:0.2,
+                        background:'#000',
+                        pattern:true
+                     
+                     });    
+                        
+                });
+                
+                /*twitter plugin
+                ---------------------*/
+                
+                $(function(){
+                
+                  $("#filter").tweet({
+                    count: 1,
+                    fetch: 20,
+                    filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
+                    username: "udfrance"
+                  });
+                  
+                });
+            
+            });
+            
+            /*grid
+            ---------------------*/
+            
+            /*init*/
+            $(function(){
+            
+                var cols = 3
+                var masonry = $('#grid');
+            
+                calculateCols();
+        
+                // initialize masonry
+                masonry.imagesLoaded(function(){
+                    
+                    masonry.masonry({
+                        itemSelector: '.thumb',
+                        isResizable: true,
+                        columnWidth:Math.floor((masonry.width()/ cols))
+                      });
+                    
+                });
+                
+              /*resize*/
+              $(window).resize(function(){
+                    
+                    
+                    calculateCols();
+                    
+                    masonry.imagesLoaded(function(){
+                    
+                      masonry.masonry({
+                        itemSelector: '.thumb',
+                        isResizable: false,
+                         isAnimated: false,
+                        columnWidth:Math.floor((masonry.width() / cols))
+                      });
+                
+                    });
+                    
+                });
+                
+                function calculateCols (){
+                
+                    if(masonry.width() <= 426){
+                    
+                         cols=2;
+                     
+                    }else{
+                
+                        cols=3;
+                
+                    }
+                }
+
+                $('.flexslider').flexslider({
+                                    
+                        animation: "face",
+                        slideDirection: "horizontal",
+                        slideshow: true,
+                        slideshowSpeed: 3500,
+                        animationDuration: 500,
+                        directionNav: true,
+                        controlNav: true 
+                            
+                 });
+            
+          });
+
+</script>
+
+</head>
+<body>
+    
+    <!--background image-->
+    <div class="epicFullscreen">
+        <img class="epicImg" src="../../images/back.jpg" alt=""/>
+    </div>
+
+    <!--start header-->
+    <div id="header-wrapper">
+        <div id="header-inner">
+            <header>
+                <div id="logo">
+                    <a href="../index.html"><img src="../../images/logo_white_200.png" alt="ew logo" /></a>
+                </div>
+                
+                <!--mobileMenu toggle-->
+                <div class="mobileMenuToggle"><a href=""></a></div>
+                
+                    <nav>
+               <ul class="navigation">
+                        <li><a href="../../index.html">English</a></li>
+                        <li><a href="../index.html">主页</a></li>
+                        <li><a href="../about.html">关于音乐节</a>
+                        <ul class="sub-menu">
+                        <li><a href="../schedule.html">日程安排</a></li>
+                                <!--<li><a href="../poster.html">海报</a></li>-->
+                            </ul></li>
+                        <li><a class="active" href="../faculty.html">师资力量</a></li>
+                        <li><a href="../application.html">申请程序</a>
+                            <ul class="sub-menu">
+                                <li><a href="../tuition.html">学费</a></li>
+                                <!--<li><a href="../payment.html">支付方式</a></li>-->
+                            </ul>   
+                        </li>
+                        <li><a href="travel.html">旅行</a>
+                            <ul class="sub-menu"> 
+                                <li><a href="../accommodations.html">食宿</a></li>
+                                <li><a href="seoul.html">首尔</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="../contact.html">联系方式</a></li>
+                        
+                    </ul>
+              </nav>
+              
+            </header>
+        </div>
+    </div>
+    <!--start content-->
+    <div id="content-wrapper">
+    	<section id="ajaxpage" class="pages clearfix">
+			<!--start project display-->
+            <div class="display-image" style="width:100%;height:auto;">
+                <img src="../../images/Pagano.jpg" alt="" />
+                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
+                    	<div></div>
+                 </div>
+            </div>
+
+           <h3>卡约 帕加诺</h3>
+		<h2>Ciao Pagano</h2>
+           <p>"帕加诺是一位如此出色的演奏家，要抓住任何听到他演奏的机会"。 约瑟夫 · 麦克莱伦，《华盛顿邮报》</p>
+           <p>帕加诺曾在四大洲举行九百多场公开演出，包括独奏会、室乐演奏及与乐团合作演出。 他在世界各地的音乐厅首演了三十六首作品，其中二十五首是作曲家为他创作和献给他的作品，包括钢琴协奏曲。 他还灌录了其中的一些作品。 帕加诺是第一位在多个国家演奏勋伯格全集的钢琴家。</p>
+           <p>其中最引人注目的是其演奏普西乌尔的作品A[ostrophe，以及其在纽约和华盛顿演奏的贝多芬迪亚贝利变奏曲，这些演奏收到了如下评论:"普西乌尔是超凡脱俗的，贝多芬绝对是一流的，两者的结合是非常地道的及原创的。" 纽约时报评论。 "我曾尝试在每个变奏之后写评论，但当我意识到我所听到的演奏是如此白热化，我放弃了这个想法。" 华盛顿邮报。</p>
+           <p>他曾与世界各地的著名乐团合作演出，其中包括 Sergiu Comissiona、Camargo Guarnieri、 Szimon Goldberg、 Howard Griffits、 John Neschling、 James Sedares、 Aylton Escobar、 Eleazar de Carvalho、 Silva Pereira、 Fabio mecheti、 Ernest Bour、 Morton Gould、 Roberto Minczuk、 Roberto tibiri。</p>
+           <p>他曾在巴西首次演奏过伯格的“室内协奏曲”，勋伯格的协奏曲，巴托克的第二协奏曲，法拉的大键琴协奏曲，以及勋伯格的全部作品;还有许多当代作曲家的世界首演，如专门为他作曲的Guarnieri，Koellreutter，Gilberto Mendes，Willy Correa de Oliveira， James DeMars，Almeida Prad。作为巴西圣保罗大学的教授，卡约创办了国际音乐双年展，吸引了许多国际知名的艺术家与他合作，包括 Saschko Gawriloff，Cristof Caskel，Raphael Hillyer，Werner Taube，Henry Schuman。 此外，他亦曾与多个乐团合作演出，包括皮埃尔. 富尼耶、亚诺斯. 史达克、 Thomas Friedli、史蒙. 哥德堡及荷兰室乐团、阿尔博. 罗森菲尔德、圣彼得堡四重奏、玛利亚·胡奥·皮尔斯。 卡约曾参加过迈阿密新世界艺术节、华盛顿美洲艺术节、格勒诺布尔艺术节、梅格艺术节、梅里达艺术节、蒙彼利埃艺术节等许多艺术节。</p>
+           <p>卡约经常在东亚演出，曾在北京、青岛、东京、横滨、神户、京都、大阪、新加坡的 Esplanade、植物花园、 SOTA 和台湾演出。 在亚利桑那州立大学，他于2000年创办了巴西艺术节(其中发布了两张 cd，第一张是巴西作曲家莫扎特·卡马戈·瓜尼埃里 · 马丁为钢琴和管弦乐队创作的两首作品，第二张是捷克国家交响乐团的作品(包括 guarnieri 的"ch ro"的世界前奏) ，第二张是阿尔梅达 · 普拉多的"钢琴小提琴和圆号三重奏"(Trio for piano and horn) ，两张专辑都由 Summit Records 发行) ，还有2010年、2012年和2014年的施坦威室内乐节。 他曾在葡萄牙、瑞士、新加坡、巴西、美国、巴拿马等国际比赛中担任裁判。 2010年，他成为亚利桑那州立大学的"年度教授"。 与玛利亚·胡奥·皮尔斯合作，Pagano 在2000年在葡萄牙创建了贝尔盖斯艺术研究中心，并为德意志留声机公司录制了《贝尔盖斯之声》。 他创立了葡萄牙理工学院钢琴系。</p>
+           <p>顶峰唱片公司、 Soundset 唱片公司、德意志留声机公司唱片公司和格利桑多唱片公司出版了他广受好评的唱片。 他的 CD 《儿童音乐》获好评如潮，其中包括《 BBC 音乐杂志》的《每月最佳 CD 》 ，以及其他在《留声机》(英国)、《 CD 协奏曲》(西班牙)和《海托尔·维拉-罗伯斯》(美国)上的精彩评论。 2009年，Soundset 发行了一张被 npr / kbaq 国家公共广播电台选为本周 CD ，名为"纪念，第一卷"。 2009年，Soundset 还发行了一张包含勃拉姆斯、普朗克、德彪西和贝尔格(与卡洛斯 · 阿尔维斯合作的单簧管)作品的 CD。2010年，帕加诺被巴西杂志《协奏曲》选中，他与肖邦和舒曼合作的新 CD 将发给5000名用户。 二○一二年，他与三首布拉姆斯小提琴奏鸣曲、艾曼纽・巴尔迪尼(Emmanuele Baldini)合作，以及与雅克・提博三重奏(Jacques Thibaud Trio)合作的舒伯特五重奏(鳟鱼)和胡梅尔(Hummel)在日本现场录制。 2013年，他为 Soundset 发行了一张包含肖邦作品的 CD。 2014年，Soundset 唱片公司还发行了"纪念第二卷"。 卡约 · 帕加诺对艺术、文学和音乐有着深刻的理解，他的诠释具有权威性和独特性。 他卓越的技巧伴随着丰富的抒情、智慧和优美的风格。 佩加诺是一位施坦威钢琴艺术家。</p>
+           
+           
+           <!--folio nav-->
+          <div id="folio-navigation">
+          	<ul>
+            	<li id="prevProject">
+                	<a href="fac-David.html" title="Previous Project"></a>
+                </li>
+                <li id="closeProject">
+                	<a href="../faculty.html" title="Back to Grid"></a>
+                </li>
+                <li id="nextProject">
+                	<a href="fac-Hsieh.html" title="Next Project"></a>
+                </li>
+             </ul>
+          </div>
+          
+        </section>
+    </div>
+   <!--start footer-->
+    <div id="footer-wrapper">
+    	<div id="footer-top" class="clearfix">
+            <footer>
+                <div class="column_one_half column-footer-widget">
+                    <div class="widget_text">
+                        <h6 class="widgettitle">East/West International Piano Festival</h6>
+                        <p>East/West International Piano Festival 由大卫·诺辛顿博士所创建</p>
+                    </div>
+                </div>
+                <div class="column_one_half last column-footer-widget last">
+                    <div class="widget_text">
+                        <h6 class="widgettitle">联系我们</h6>
+                        <p>牛瑞熙</p>
+                        <p>电话： +1 215 421 7502
+                        Email: <a href="mailto:nruixi622@gmail.com">nruixi622@gmail.com</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div id="footer-bottom">
+        	<footer>
+            	<!--social networks-->
+                <p class="footer-copyright">Copy Right Reserved - East/West International Piano Festival</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
