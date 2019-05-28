@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0" />
+
+<title>EAST/WEST Internatinal Piano Festival</title>
+
+<link rel="stylesheet" type="text/css" href="../../css/flexslider.css" />
+<link rel="stylesheet" type="text/css" href="../../css/jquery.fancybox-1.3.4.css"/>
+<link rel="stylesheet" type="text/css" href="../../css/epicfullscreen.css" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/udt_shortcodes.css" />
+<link rel="stylesheet" type="text/css" href="../../css/udt_media_queries.css" />
+
+<!--font-->
+<link rel="stylesheet" type="text/css" href="../../css/font/bebasneue.css"  charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="../../css/quicksand.css" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--js-->
+<script type="text/javascript" src="../../js/iOS-timer.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.fancybox-1.3.4.pack.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/jquery.epicHover-fadeZoom.js"></script>
+<script type="text/javascript" src="../../js/jquery.epicfullscreen.js"></script>
+<script type="text/javascript" src="../../js/jquery.masonry.js"></script>
+<script type="text/javascript" src="../../js/jquery.tweet.js"></script>
+<script type="text/javascript" src="../../js/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+    
+            /*device check
+            ---------------------*/
+            
+            var isMobile = false;
+    
+            if( navigator.userAgent.match(/Android/i) || 
+                navigator.userAgent.match(/webOS/i) ||
+                navigator.userAgent.match(/iPhone/i) || 
+                navigator.userAgent.match(/iPad/i)|| 
+                navigator.userAgent.match(/iPod/i) || 
+                navigator.userAgent.match(/BlackBerry/i)){
+                                
+                    isMobile = true;
+                            
+            }
+            
+            $(document).ready(function(){
+            
+                /*epic hover plugin
+                ---------------------*/
+                
+                $(function() {
+                
+                    $('.thumb').epicHoverFadeZoom({
+                         
+                            overlayColor:'#000',                        //Hex: #xxxx
+                            fontColor:'#fff',                           //Hex: #xxxx
+                            captionDirection:'topToBottom',             //String: caption slide in/out direction
+                            opacity: 0.8,                               //Integer: 0-1
+                            transitionSpeed:600,                        //Integer: transitions speed, in milliseconds
+                            easing:'swing',                             //String: easing method - see http://jqueryui.com/demos/effect/easing.html
+                            padding: 0,                                 //Integer: padding
+                            mobileActive:false,                         //Boolean: whether to activate/deactivate for mobile
+                            zoom:50                                     //Integer: zoom factor
+                         
+                    }); 
+                
+                });
+                
+                /*epic fullscreen plugin
+                ---------------------*/
+                
+                $(function() {
+                
+                $('.epicFullscreen').epicFullscreen({
+                     
+                        opacity:0.2,
+                        background:'#000',
+                        pattern:true
+                     
+                     });    
+                        
+                });
+                
+                /*twitter plugin
+                ---------------------*/
+                
+                $(function(){
+                
+                  $("#filter").tweet({
+                    count: 1,
+                    fetch: 20,
+                    filter: function(t){ return ! /^@\w+/.test(t["tweet_raw_text"]); },
+                    username: "udfrance"
+                  });
+                  
+                });
+            
+            });
+            
+            /*grid
+            ---------------------*/
+            
+            /*init*/
+            $(function(){
+            
+                var cols = 3
+                var masonry = $('#grid');
+            
+                calculateCols();
+        
+                // initialize masonry
+                masonry.imagesLoaded(function(){
+                    
+                    masonry.masonry({
+                        itemSelector: '.thumb',
+                        isResizable: true,
+                        columnWidth:Math.floor((masonry.width()/ cols))
+                      });
+                    
+                });
+                
+              /*resize*/
+              $(window).resize(function(){
+                    
+                    
+                    calculateCols();
+                    
+                    masonry.imagesLoaded(function(){
+                    
+                      masonry.masonry({
+                        itemSelector: '.thumb',
+                        isResizable: false,
+                         isAnimated: false,
+                        columnWidth:Math.floor((masonry.width() / cols))
+                      });
+                
+                    });
+                    
+                });
+                
+                function calculateCols (){
+                
+                    if(masonry.width() <= 426){
+                    
+                         cols=2;
+                     
+                    }else{
+                
+                        cols=3;
+                
+                    }
+                }
+
+                $('.flexslider').flexslider({
+                                    
+                        animation: "face",
+                        slideDirection: "horizontal",
+                        slideshow: true,
+                        slideshowSpeed: 3500,
+                        animationDuration: 500,
+                        directionNav: true,
+                        controlNav: true 
+                            
+                 });
+            
+          });
+
+</script>
+
+</head>
+<body>
+    
+    <!--background image-->
+    <div class="epicFullscreen">
+        <img class="epicImg" src="../../images/back.jpg" alt=""/>
+    </div>
+
+    <!--start header-->
+    <div id="header-wrapper">
+        <div id="header-inner">
+            <header>
+                <div id="logo">
+                    <a href="../index.html"><img src="../../images/logo_white_200.png" alt="ew logo" /></a>
+                </div>
+                
+                <!--mobileMenu toggle-->
+                <div class="mobileMenuToggle"><a href=""></a></div>
+                
+                    <nav>
+               <ul class="navigation">
+                        <li><a href="../../index.html">English</a></li>
+                        <li><a href="../index.html">主页</a></li>
+                        <li><a href="../about.html">关于音乐节</a>
+                        <ul class="sub-menu">
+                        <li><a href="../schedule.html">日程安排</a></li>
+                                <!--<li><a href="../poster.html">海报</a></li>-->
+                            </ul></li>
+                        <li><a class="active" href="../faculty.html">师资力量</a></li>
+                        <li><a href="../application.html">申请程序</a>
+                            <ul class="sub-menu">
+                                <li><a href="../tuition.html">学费</a></li>
+                                <!--<li><a href="../payment.html">支付方式</a></li>-->
+                            </ul>   
+                        </li>
+                        <li><a href="travel.html">旅行</a>
+                            <ul class="sub-menu"> 
+                                <li><a href="../accommodations.html">食宿</a></li>
+                                <li><a href="seoul.html">首尔</a></li>
+                            </ul> 
+                        </li>
+                        <li><a href="../contact.html">联系方式</a></li>
+                        
+                    </ul>
+              </nav>
+              
+            </header>
+        </div>
+    </div>
+    <!--start content-->
+    <div id="content-wrapper">
+    	<section id="ajaxpage" class="pages clearfix">
+			<!--start project display-->
+            <div class="display-image" style="width:100%;height:auto;">
+                <img src="../../images/Choi.jpg" alt="" />
+                <div class="caption caption-color-white bottomLeft caption-single-border medium" style="width:35%;">
+                    	<div></div>
+                 </div>
+            </div>
+
+           <h3>崔熙妍</h3>
+		<h2>Hie-Yon Choi</h2>
+           <p>作为同时代最受欢迎的钢琴家之一，韩国钢琴家崔熙妍在国际钢琴比赛中首次亮相，她曾赢得卡佩尔、 Epinal、布沙尼和维奥蒂等著名钢琴比赛的奖项。 崔熙妍曾与多个欧洲、美国及韩国的著名乐团合作演出，包括柏林音乐厅、华盛顿国家交响乐团、 Northern Sinfonia 乐团、首尔市立交响乐团及韩国广播交响乐团等，并于多个音乐节及音乐会担任独奏。
+<p>崔熙妍演奏生涯的一个里程碑是在首尔的 Kumho Art Hall 举行的贝多芬三十二首钢琴奏鸣曲的四年循环。 因为这个系列演出，她获得了2005年韩国艺术文化协会颁发的艺术奖。 十年后，她完成了贝多芬的另一个周期，所有的钢琴三重奏，小提琴奏鸣曲和大提琴和钢琴作品。 她的第二部贝多芬钢琴奏鸣曲已在韩国、德国和美国的多个地方演出，并于2018年完成。 崔熙妍的其他系列演出还包括对勃拉姆斯和法国作曲家的探索。 她曾与多位著名音乐家合作，包括 Truls mork、Tsuyoshi Tsutsumi、 Peter Stumph、 Mark Kosower、 Romain Guyot、 Ulf Wallin、 Mikyung Lee、 Soovin Kim 等
+<p>除了贝多芬、舒伯特、勃拉姆斯、德彪西等古典钢琴文学经典之外，二十世纪和二十一世纪的音乐也构成了崔熙妍事业的重要组成部分。 她是新音乐的坚定拥护者，也是Tong-Yeong国际音乐节的客座艺术家。 她与首尔爱乐乐团合作演出了奥利维埃·梅西安、 gyorgy Kurtag、Sofia Gubaidulina、 York holler、 Unsuk Chin、 Suhki Kang a.o. 的作品。 自2010年以来，崔熙妍一直是首尔国立大学新音乐系列的委员会成员，并成立了2021年驻校合奏团。
+<p>1999年，崔熙妍成为汉城国立大学钢琴系历史上最年轻的教授。 曾应邀到英国、美国、法国、德国、中国香港等地的音乐学校担任大师班学员。崔熙妍也曾在维也纳、圣彼得堡、阿马尔菲、布雷西亚及布拉格等地教授国际音乐课程。 她还是国际比赛的评委会成员。 最近，她在法国奥尔兰的比赛中担任评委会主席。
+<p>20岁的时候，崔熙妍作为帕克和戴维斯奖的获得者在德国发行了唱片。 她还为柏林的伊桑云档案馆、柏林广播电台和瑞典广播电台录制了伊桑云、德彪西、李斯特和普罗科菲耶夫的作品。 后来，她在奥洛斯、韩国被释放，何延被授予南帕音乐奖和艺术奖。 2019年，她的贝多芬专辑在韩国德卡发行，在韩国和欧洲都得到了热情的评论。
+<p>崔熙妍生于仁川，六岁首次与仁川爱乐乐团合作演出。 她在韩国获得四项最令人垂涎的比赛(东亚、仲昂、韩国时报、荣阳) ，并在十八岁时移居德国，跟随赫维格教授学习。 Hochschule der Künste Berlin 大学已故教授 Hans Leygraf 和印第安纳大学已故教授 Gyorgy Sebok 进一步激发了她的灵感。</p>
+
+           
+           <!--folio nav-->
+          <div id="folio-navigation">
+          	<ul>
+            	<li id="prevProject">
+                	<a href="fac-David.html" title="Previous Project"></a>
+                </li>
+                <li id="closeProject">
+                	<a href="../faculty.html" title="Back to Grid"></a>
+                </li>
+                <li id="nextProject">
+                	<a href="fac-Hsieh.html" title="Next Project"></a>
+                </li>
+             </ul>
+          </div>
+          
+        </section>
+    </div>
+   <!--start footer-->
+    <div id="footer-wrapper">
+    	<div id="footer-top" class="clearfix">
+            <footer>
+                <div class="column_one_half column-footer-widget">
+                    <div class="widget_text">
+                        <h6 class="widgettitle">East/West International Piano Festival</h6>
+                        <p>East/West International Piano Festival 由大卫·诺辛顿博士所创建</p>
+                    </div>
+                </div>
+                <div class="column_one_half last column-footer-widget last">
+                    <div class="widget_text">
+                        <h6 class="widgettitle">联系我们</h6>
+                        <p>牛瑞熙</p>
+                        <p>电话： +1 215 421 7502
+                        Email: <a href="mailto:nruixi622@gmail.com">nruixi622@gmail.com</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div id="footer-bottom">
+        	<footer>
+            	<!--social networks-->
+                <p class="footer-copyright">Copy Right Reserved - East/West International Piano Festival</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
